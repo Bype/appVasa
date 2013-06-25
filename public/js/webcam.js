@@ -37,15 +37,17 @@ define([], function() {
 			x : 2 * 640 / 3,
 			y : 2 * 480 / 3
 		}]
-
+		var nbval = 25;
 		var colorM = [[], [], [], [], []];
 		for (var idxp = 0; idxp < 5; idxp++)
-			for (var idx = 0; idx < 10; idx++)
+			for (var idx = 0; idx < nbval; idx++)
 				colorM[idxp][idx] = [255, 255, 255, 0];
 		var i = 0;
+
 		function draw() {
-			i = (i + 1) % 10;
 			var c = document.getElementById('can').getContext('2d');
+			
+			i = (i + 1) % nbval;
 			c.drawImage(v, 0, 0);
 			c.strokeStyle = '#fff';
 			c.lineWidth = 3;
@@ -57,13 +59,13 @@ define([], function() {
 				colorM[p][i][1] = imgd.data[1];
 				colorM[p][i][2] = imgd.data[2];
 				var r = 0, g = 0, b = 0;
-				for (var idx = 0; idx < 10; idx++) {
+				for (var idx = 0; idx < nbval; idx++) {
 					r += colorM[p][idx][0];
 					g += colorM[p][idx][1];
 					b += colorM[p][idx][2];
 				}
 				$('.color' + p).css({
-					'background-color' : 'rgb(' + Math.floor(r / 10) + ',' + Math.floor(g / 10) + ',' + Math.floor(b / 10) + ')'
+					'background-color' : 'rgb(' + Math.floor(r / nbval) + ',' + Math.floor(g / nbval) + ',' + Math.floor(b / nbval) + ')'
 				});
 			}
 
