@@ -37,17 +37,33 @@ define([], function() {
 			x : 2 * 640 / 3,
 			y : 2 * 480 / 3
 		}]
+
+		var colorM = [[], [], [], [], []];
+		for (var idxp = 0; idxp < 5; idxp++)
+			for (var idx = 0; idx < 10; idx++)
+				colorM[idxp][idx] = [255, 255, 255, 0];
+		var i = 0;
 		function draw() {
+			i = (i + 1) % 10;
 			var c = document.getElementById('can').getContext('2d');
 			c.drawImage(v, 0, 0);
-			c.strokeStyle = '#f00';
+			c.strokeStyle = '#fff';
+			c.lineWidth = 3;
 			for (p in hotpx) {
 				var px = hotpx[p];
-				c.strokeRect(px.x - 8, px.y - 8, 16, 16);
+				c.strokeRect(px.x - 16, px.y - 16, 32, 32);
 				var imgd = c.getImageData(px.x, px.y, 1, 1);
-				var pix = imgd.data;
+				colorM[p][i][0] = imgd.data[0];
+				colorM[p][i][1] = imgd.data[1];
+				colorM[p][i][2] = imgd.data[2];
+				var r = 0, g = 0, b = 0;
+				for (var idx = 0; idx < 10; idx++) {
+					r += colorM[p][idx][0];
+					g += colorM[p][idx][1];
+					b += colorM[p][idx][2];
+				}
 				$('.color' + p).css({
-					'background-color' : 'rgb(' + pix[0] + ',' + pix[1] + ',' + pix[2] + ')'
+					'background-color' : 'rgb(' + Math.floor(r / 10) + ',' + Math.floor(g / 10) + ',' + Math.floor(b / 10) + ')'
 				});
 			}
 

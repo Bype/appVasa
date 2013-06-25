@@ -8,16 +8,16 @@
     </head>
     <body>
         <div id='main'>
-            <div id='circle01' class='color1 circle'>
-                <div id='circle02' class='color2 circle'>
-                    <div id='circle03' class='color3 circle'>
-                        <div id='circle04' class='color4 circle'>
-                            <div id='circle05' class='color5 circle'>
-                                <div id='circle06' class='color1 circle'>
-                                    <div id='circle07' class='color2 circle'>
-                                        <div id='circle08' class='color3 circle'>
-                                            <div id='circle09' class='color4 circle'>
-                                                <div id='circle10' class='color5 circle'></div>
+            <div id='circle01' class='color0 circle'>
+                <div id='circle02' class='color1 circle'>
+                    <div id='circle03' class='color2 circle'>
+                        <div id='circle04' class='color3 circle'>
+                            <div id='circle05' class='color4 circle'>
+                                <div id='circle06' class='color0 circle'>
+                                    <div id='circle07' class='color1 circle'>
+                                        <div id='circle08' class='color2 circle'>
+                                            <div id='circle09' class='color3 circle'>
+                                                <div id='circle10' class='color4 circle'></div>
                                             </div>
                                         </div>
                                     </div>
