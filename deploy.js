@@ -9,14 +9,14 @@ var client = new haibu.drone.Client({
 // A basic package.json for a node.js application on haibu
 var app = {
 	"user" : "dolivari",
-	"name" : "template",
+	"name" : "appVas",
 	"domain" : "bype.org",
 	"repository" : {
 		"type" : "git",
 		"url" : "git://github.com/davidonet/Template.git"
 	},
 	"scripts" : {
-		"start" : "template.js"
+		"start" : "appvasa.js"
 	}
 };
 

@@ -8,6 +8,8 @@ lib-cov
 *.pid
 *.gz
 *~
+.project
+style.css
 pids
 logs
 results

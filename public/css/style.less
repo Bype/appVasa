@@ -1,2 +1,52 @@
-@import 'bootstrap.css';
-@import 'bootstrap-responsive.css';
+@import "reset.css";
+
+body {
+    background-color: black;
+    overflow: hidden;
+}
+
+@peach:#FFCC55;
+@heatland:#CC6600;
+@mccarthy:#990000;
+
+@-webkit-keyframes
+turning_cw {from{
+    -webkit-transform: rotate(0deg);
+}
+to {
+    -webkit-transform: rotate(360deg);
+}
+}
+
+#main {
+    margin: 2% auto;
+    -webkit-animation: turning_cw 8s linear infinite;
+}
+
+.circle {
+    margin: auto;
+    text-align: center;
+    position: relative;
+}
+
+
+.color1 {
+    background-color: #FFCC55;
+}
+
+.color5 {
+    background-color: #990000;
+}
+
+.color3 {
+    background-color: #CC6600;
+}
+
+.color4 {
+    background-color: #D5BA8D;
+}
+
+.color2 {
+    background-color: #3A1616;
+}
+
