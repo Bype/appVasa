@@ -13,7 +13,7 @@ var app = {
 	"domain" : "bype.org",
 	"repository" : {
 		"type" : "git",
-		"url" : "git://github.com/davidonet/Template.git"
+		"url" : "https://github.com/Bype/appVasa.git"
 	},
 	"scripts" : {
 		"start" : "appvasa.js"

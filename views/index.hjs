@@ -28,6 +28,8 @@
                 </div>
             </div>
         </div>
+        <video id='cam' autoplay hidden></video>
+        <canvas id='can' width='640px' height=480px></canvas>
         <script data-main="js/main" src="js/lib/require-jquery.js"></script>
     </body>
 </html>
