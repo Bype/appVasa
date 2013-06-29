@@ -4,32 +4,23 @@
         <title>{{ title }}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel='stylesheet' href='/css/style.css' />
-
     </head>
     <body>
-        <div id='main'>
-            <div id='circle01' class='color0 circle'>
-                <div id='circle02' class='color1 circle'>
-                    <div id='circle03' class='color2 circle'>
-                        <div id='circle04' class='color3 circle'>
-                            <div id='circle05' class='color4 circle'>
-                                <div id='circle06' class='color0 circle'>
-                                    <div id='circle07' class='color1 circle'>
-                                        <div id='circle08' class='color2 circle'>
-                                            <div id='circle09' class='color3 circle'>
-                                                <div id='circle10' class='color4 circle'></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+        <img id='logo' src='img/baselogo.png'/>
+        <img id='top' src='img/toplogo.png'/>
+        <img id='bot' src='img/botlogo.png'/>
+
+        <div id='launcher'>
+            <a href='/app1'><img id="a1" src='img/a1.png'/></a>
+            <a href='/app2'><img id="a2" src='img/a2.png'/></a>
+            <a href='/app3'><img id="a3" src='img/a3.png'/></a>
         </div>
-        <video id='cam' autoplay hidden></video>
-        <canvas id='can' width='640px' height=480px></canvas>
+
+    <div id='vasa'>
+        
+    </div>
+
         <script data-main="js/main" src="js/lib/require-jquery.js"></script>
     </body>
 </html>

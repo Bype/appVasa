@@ -1,0 +1,56 @@
+@import "reset.css";
+body {
+  background-color: black;
+  overflow: hidden;
+}
+#back {
+  float: right;
+  font-size: 150px;
+}
+@-webkit-keyframes turning_cw {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+#cam {
+  position: absolute;
+  top: 0;
+  width: 320px;
+  height: 240px;
+}
+#can {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 240px;
+  background-color: #aaa;
+  -webkit-transform: scaleX(-1);
+}
+#main {
+  margin: 2% auto;
+  -webkit-animation: turning_cw 8s linear infinite;
+}
+.circle {
+  margin: auto;
+  text-align: center;
+  position: relative;
+}
+.color1 {
+  background-color: #FFCC55;
+}
+.color5 {
+  background-color: #990000;
+}
+.color3 {
+  background-color: #CC6600;
+}
+.color4 {
+  background-color: #D5BA8D;
+}
+.color2 {
+  background-color: #3A1616;
+}

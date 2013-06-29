@@ -1,68 +1,70 @@
 @import "reset.css";
+@import "fonts/stylesheet.css";
 
 body {
     background-color: black;
     overflow: hidden;
+    font-family: 'EXCELSIORSANS';
+    font-size: 100pt;
 }
-
-@peach:#FFCC55;
-@heatland:#CC6600;
-@mccarthy:#990000;
-
-@-webkit-keyframes
-turning_cw {from{
+@-webkit-keyframes spin {
+from {
     -webkit-transform: rotate(0deg);
 }
 to {
     -webkit-transform: rotate(360deg);
 }
 }
-
-#cam{
+.vasa {
+    color: white;
+    opacity:.5;
+    font-size: 120pt;
     position: absolute;
-    top:0;
-    width:320px;
-    height:240px;
+    -webkit-animation-name: spin; 
+    -webkit-animation-iteration-count: infinite; 
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-duration: 10s; 
 }
-#can{
+#logo {
+    width: 50%;
+    left: 30% top : 0;
     position: absolute;
-    top:0;
-    left:0;
-    width:320px;
-    height:240px;
-    background-color: #aaa;
-    -webkit-transform: scaleX(-1);
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+#top {
+    width: 50%;
+    left: 30% top : 0;
+    position: absolute;
+    opacity: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+#bot {
+    width: 50%;
+    left: 30% top : 0;
+    position: absolute;
+    opacity: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#main {
-    margin: 2% auto;
-    -webkit-animation: turning_cw 8s linear infinite;
+#a1 {
+    width: 12%;
+    position: absolute;
+    top: 120%;
+    left: 75%
 }
-
-.circle {
-    margin: auto;
-    text-align: center;
-    position: relative;
+#a2 {
+    width: 12%;
+    position: absolute;
+    top: 120%;
+    left: 75%
 }
-
-
-.color1 {
-    background-color: #FFCC55;
+#a3 {
+    width: 12%;
+    position: absolute;
+    top: 120%;
+    left: 75%
 }
-
-.color5 {
-    background-color: #990000;
-}
-
-.color3 {
-    background-color: #CC6600;
-}
-
-.color4 {
-    background-color: #D5BA8D;
-}
-
-.color2 {
-    background-color: #3A1616;
-}
-

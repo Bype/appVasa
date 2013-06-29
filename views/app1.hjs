@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' href='/css/app1.css' />
+
+    </head>
+    <body>
+        <div id='main'>
+            <div id='circle01' class='color0 circle'>
+                <div id='circle02' class='color1 circle'>
+                    <div id='circle03' class='color2 circle'>
+                        <div id='circle04' class='color3 circle'>
+                            <div id='circle05' class='color4 circle'>
+                                <div id='circle06' class='color0 circle'>
+                                    <div id='circle07' class='color1 circle'>
+                                        <div id='circle08' class='color2 circle'>
+                                            <div id='circle09' class='color3 circle'>
+                                                <div id='circle10' class='color4 circle'></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id='back'>
+            <a href='/'>Retour</a>
+        </div>
+        <video id='cam' autoplay hidden></video>
+        <canvas id='can' width='640px' height=480px></canvas>
+        <script data-main="js/main1" src="js/lib/require-jquery.js"></script>
+    </body>
+</html>
