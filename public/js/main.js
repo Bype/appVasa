@@ -3,7 +3,7 @@ requirejs.config({
 	}
 });
 
-require(["jquery"], function($) {
+require(["jquery","lib/ga"], function($) {
 	$(function() {
 		var botx = $('#bot').position().left;
 		$('#bot').css({

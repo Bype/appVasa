@@ -10,7 +10,7 @@ requirejs.config({
 	}
 });
 
-require(['jquery', 'underscore', 'bootstrap'], function($, _) {
+require(['jquery', 'underscore', 'bootstrap','lib/ga'], function($, _) {
 	$(function() {
 		require(['circles','webcam'], function(circles,webcam) {
 

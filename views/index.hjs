@@ -4,6 +4,7 @@
         <title>{{ title }}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel='stylesheet' href='/css/style.css' />
+
     </head>
     <body>
 
@@ -17,9 +18,9 @@
             <a href='/app3'><img id="a3" src='img/a3.png'/></a>
         </div>
 
-    <div id='vasa'>
-        
-    </div>
+        <div id='vasa'>
+
+        </div>
 
         <script data-main="js/main" src="js/lib/require-jquery.js"></script>
     </body>
