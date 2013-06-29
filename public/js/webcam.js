@@ -18,8 +18,23 @@ define([], function() {
 		video : true,
 		audio : false
 	}, function(localMediaStream) {
+
 		var v = document.querySelector('video');
 		v.src = window.URL.createObjectURL(localMediaStream);
+		v.addEventListener('play', function() {
+			// Ready to go. Do some stuff.
+
+			$('#can').fadeIn(1000, function() {
+			});
+
+			$('#back').animate({
+				bottom : '3%'
+			}, 1000);
+			$('#logo').animate({
+				bottom : '3%'
+
+			}, 1000);
+		});
 
 		var hotpx = [{
 			x : -50 + 640 / 4,
@@ -49,11 +64,9 @@ define([], function() {
 
 			i = (i + 1) % nbval;
 			c.drawImage(v, 0, 0);
-			c.strokeStyle = '#fff';
-			c.lineWidth = 3;
+			c.lineWidth = 2;
 			for (p in hotpx) {
 				var px = hotpx[p];
-				c.strokeRect(px.x - 16, px.y - 16, 32, 32);
 				var imgd = c.getImageData(px.x, px.y, 1, 1);
 				colorM[p][i][0] = imgd.data[0];
 				colorM[p][i][1] = imgd.data[1];
@@ -64,6 +77,11 @@ define([], function() {
 					g += colorM[p][idx][1];
 					b += colorM[p][idx][2];
 				}
+				c.fillStyle = 'rgb(' + Math.floor(r / nbval) + ',' + Math.floor(g / nbval) + ',' + Math.floor(b / nbval) + ')';
+				c.fillRect(px.x - 16, px.y - 16, 32, 32);
+				c.strokeStyle = "#000";
+				c.strokeRect(px.x - 16, px.y - 16, 32, 32);
+
 				$('.color' + p).css({
 					'background-color' : 'rgb(' + Math.floor(r / nbval) + ',' + Math.floor(g / nbval) + ',' + Math.floor(b / nbval) + ')'
 				});

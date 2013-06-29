@@ -10,11 +10,11 @@ requirejs.config({
 	}
 });
 
-require(['jquery', 'underscore', 'bootstrap','lib/ga'], function($, _) {
+require(['jquery', 'underscore', 'bootstrap', 'lib/ga'], function($, _) {
 	$(function() {
-		require(['circles','webcam'], function(circles,webcam) {
-
+		require(['circles'], function(circles) {
 		});
-		
+		require(['webcam'], function(webcam) {
+		});
 	});
 });
