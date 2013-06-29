@@ -8,8 +8,8 @@ define(['lib/pixastic.custom'], function() {
 		lImg.onload = function() {
 			Pixastic.process(this, "hsl", {
 				hue : -180 + (hue * 60),
-				saturation : 0,
-				lightness : 0
+				saturation : 20,
+				lightness :0
 			});
 
 			document.body.appendChild(this);
