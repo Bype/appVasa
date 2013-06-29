@@ -6,7 +6,7 @@
         <link rel='stylesheet' href='/css/app2.css' />
     </head>
     <body>
-        <img id='qrcode' src='img/qrcode.png'/>
+        <a href='/marker' target='_blank'><img id='qrcode' src='img/qrcode.png'/></a>
         <footer>
             <div id='logo'>
                 <img style='height:100px;' src='img/a2.png'/>
