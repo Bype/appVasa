@@ -41,34 +41,26 @@ require(["jquery"], function($) {
 			for (var i = 0; i < t.length; i++) {
 				$('#vasa').append('<p class="vasa">' + t[i] + '</p>');
 			}
-			var factor = 1;
-			var fonda = function() {
-				if (factor < 3)
-					factor *= 1.2;
-				var pos = 80;
-				$('.vasa').each(function(idx, elt) {
-					var angle = Math.random() * Math.PI * 2;
-					$(elt).animate({
-						top : Math.cos(angle) * $(document).width(),
-						left : Math.sin(angle) * $(document).width()*1.1,
-					}, 1000 * factor, function() {
-						$('#vasa').show();
-
-						$(elt).animate({
-							left : pos,
-							top : '80%',
-
-						}, factor * Math.floor(2000 + Math.random() * 1000));
-						pos += .9 * $(elt).width();
-						if (idx == 8)
-							pos += 40;
-					});
+			var pos = 310;
+			$('.vasa').each(function(idx, elt) {
+				var angle = Math.random() * Math.PI * 2;
+				$(elt).css({
+					top : Math.cos(angle) * $(document).width(),
+					left : Math.sin(angle) * $(document).width() * 1.2,
 				});
-			}
-			fonda();
-			setInterval(fonda, 10000);
+				$('#vasa').show();
+				$(elt).animate({
+					left : pos,
+					top : '55%',
+
+				},Math.floor(200 + Math.random() * 1000));
+				pos += $(elt).width();
+				if (idx == 8)
+					pos += 40;
+			});
 
 		});
+
 	});
 });
 
