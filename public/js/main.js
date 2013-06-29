@@ -28,10 +28,10 @@ require(["jquery"], function($) {
 			left : topx
 		}, 500, function() {
 			$("#a1").animate({
-				top : "20%"
+				top : "10%"
 			});
 			$("#a2").animate({
-				top : "45%"
+				top : "40%"
 			});
 			$("#a3").animate({
 				top : "70%"
@@ -41,26 +41,33 @@ require(["jquery"], function($) {
 			for (var i = 0; i < t.length; i++) {
 				$('#vasa').append('<p class="vasa">' + t[i] + '</p>');
 			}
-			var pos = 310;
+			var pos = $(document).width() / 12;
 			$('.vasa').each(function(idx, elt) {
 				var angle = Math.random() * Math.PI * 2;
 				$(elt).css({
+					"font-size" : ($(document).width() / 1920 * 120) + 'px',
 					top : Math.cos(angle) * $(document).width(),
 					left : Math.sin(angle) * $(document).width() * 1.2,
 				});
+			});
+			$('.vasa').each(function(idx, elt) {
+
 				$('#vasa').show();
 				$(elt).animate({
 					left : pos,
-					top : '55%',
-
-				},Math.floor(200 + Math.random() * 1000));
-				pos += $(elt).width();
+					top : '80%'
+				}, Math.floor(200 + Math.random() * 1000));
+				pos += 1.1 * $(elt).width();
 				if (idx == 8)
-					pos += 40;
+					pos += 20;
 			});
-
 		});
 
 	});
+
+	$(window).resize(function() {
+		location.reload();
+	});
+
 });
 
