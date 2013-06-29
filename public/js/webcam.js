@@ -22,20 +22,20 @@ define([], function() {
 		v.src = window.URL.createObjectURL(localMediaStream);
 
 		var hotpx = [{
-			x : 640 / 4,
-			y : 480 / 3
+			x : -50 + 640 / 4,
+			y : 50 + 480 / 3
 		}, {
 			x : 2 * 640 / 4,
-			y : 480 / 3
+			y : 480 / 3 - 70
 		}, {
-			x : 3 * 640 / 4,
-			y : 480 / 3
+			x : 50 + 3 * 640 / 4,
+			y : 50 + 480 / 3
 		}, {
 			x : 640 / 3,
-			y : 2 * 480 / 3
+			y : 70 + 2 * 480 / 3
 		}, {
 			x : 2 * 640 / 3,
-			y : 2 * 480 / 3
+			y : 70 + 2 * 480 / 3
 		}]
 		var nbval = 25;
 		var colorM = [[], [], [], [], []];
@@ -46,7 +46,7 @@ define([], function() {
 
 		function draw() {
 			var c = document.getElementById('can').getContext('2d');
-			
+
 			i = (i + 1) % nbval;
 			c.drawImage(v, 0, 0);
 			c.strokeStyle = '#fff';

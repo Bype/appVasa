@@ -28,11 +28,16 @@
                 </div>
             </div>
         </div>
-        <div id='back'>
-            <a href='/'>Retour</a>
-        </div>
+        <footer>
+            <div id='logo'>
+                <img style='height:100px;' src='img/a1.png'/>
+            </div>
+            <div id='back'>
+                <a href='/'><img style='height:100px;' src='img/back1.png'/></a>
+            </div>
+        </footer>
         <video id='cam' autoplay hidden></video>
-        <canvas id='can' width='640px' height=480px></canvas>
+        <canvas id='can' width='640px' height='480px'></canvas>
         <script data-main="js/main1" src="js/lib/require-jquery.js"></script>
     </body>
 </html>
