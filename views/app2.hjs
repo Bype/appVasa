@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' href='/css/app2.css' />
+    </head>
+    <body>
+        <img id='qrcode' src='img/qrcode.png'/>
+        <footer>
+            <div id='logo'>
+                <img style='height:100px;' src='img/a2.png'/>
+            </div>
+            <div id='back'>
+                <a href='/'><img style='height:100px;' src='img/back1.png'/></a>
+            </div>
+        </footer>
+        <video id='cam' autoplay hidden></video>
+        <canvas id='can' width='640px' height='480px'></canvas>
+        <script data-main="js/main2" src="js/lib/require-jquery.js"></script>
+    </body>
+</html>

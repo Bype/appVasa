@@ -32,7 +32,6 @@ define([], function() {
 			}, 1000);
 			$('#logo').animate({
 				bottom : '3%'
-
 			}, 1000);
 		});
 

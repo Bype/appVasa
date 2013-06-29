@@ -35,7 +35,7 @@
                 <a href='/'><img style='height:100px;' src='img/back1.png'/></a>
             </div>
         </footer>
-        <video id='cam' autoplay hidden></video>
+                <video id='cam' autoplay hidden></video>
         <canvas id='can' width='640px' height='480px'></canvas>
         <script data-main="js/main1" src="js/lib/require-jquery.js"></script>
     </body>
