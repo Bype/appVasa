@@ -40,7 +40,11 @@ require(['jquery', 'underscore', 'bootstrap', 'lib/ga', 'cv', 'aruco'], function
 				v.src = window.URL.createObjectURL(localMediaStream);
 				v.addEventListener('play', function() {
 					// Ready to go. Do some stuff.
-
+					$('#can').css({
+						width:$(document).width(),
+						height:$(document).width()*3/4,
+						'z-index':-1000
+					});
 					$('#can').fadeIn(1000, function() {
 					});
 
