@@ -30,6 +30,7 @@ app.configure('development', function(){
 app.get('/', routes.index);
 app.get('/app1', routes.app1);
 app.get('/app2', routes.app2);
+app.get('/app3', routes.app3);
 app.get('/marker/:r', routes.marker);
 app.get('/marker', routes.randommarker);
 

@@ -19,6 +19,13 @@ exports.app2 = function(req, res) {
 		title : 'Express'
 	});
 };
+
+exports.app3 = function(req, res) {
+	res.render('app3', {
+		title : 'Express'
+	});
+};
+
 exports.marker = function(req, res) {
 	var data = {
 		t1 : req.params.r[0],

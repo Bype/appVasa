@@ -1,0 +1,40 @@
+@import "reset.css";
+
+body {
+    background-color: black;
+    overflow: hidden;
+    text-align: center;
+}
+
+#logo {
+    position: absolute;
+    left: 2%;
+    bottom: 2%;
+    z-index: 1000;
+}
+#back {
+    position: absolute;
+    right: 2%;
+    bottom: 2%;
+    z-index: 1000;
+}
+.sq {
+    width: 64px;
+    height: 64px;
+    display: block;
+    position: absolute;
+}
+
+.lf {
+    background-color: #44e;
+    -webkit-transform: skewY(30deg);
+}
+.tf {
+    background-color: #ee4;
+    -webkit-transform: rotate(45deg) skew(-15deg,-15deg) scale(1.1,1.1);
+}
+.rf {
+    background-color: #e44;
+    -webkit-transform: skewY(-30deg);
+}
+
