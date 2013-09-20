@@ -18,12 +18,13 @@ body {
     bottom: 2%;
     z-index: 1000;
 }
-.sq {
+.sq, .sqe {
     width: 64px;
     height: 64px;
     display: block;
     position: absolute;
 }
+
 
 .lf {
     background-color: #44e;
@@ -38,3 +39,25 @@ body {
     -webkit-transform: skewY(-30deg);
 }
 
+@edgestyle:solid 2px white;
+
+.sqe {
+    z-index: -1000;
+}
+
+.lfe {
+    -webkit-transform: skewY(30deg);
+    border-bottom: @edgestyle;
+    border-left: @edgestyle;
+}
+
+.tfe {
+    -webkit-transform: rotate(45deg) skew(-15deg,-15deg) scale(1.1,1.1);
+    border-top: @edgestyle;
+    border-left: @edgestyle;
+}
+.rfe {
+    -webkit-transform: skewY(-30deg);
+    border-bottom: @edgestyle;
+    border-right: @edgestyle;
+}
