@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>{{ title }}</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel='stylesheet' href='/css/app3.css' />
-	</head>
-	<body>
-		<footer>
-			<div id='logo'>
-				<img style='height:100px;' src='img/a3.png'/>
-			</div>
-			<div id='back'>
-				<a href='/'><img style='height:100px;' src='img/back1.png'/></a>
-			</div>
-		</footer>
-		<script data-main="js/main3" src="js/lib/require-jquery.js"></script>
-	</body>
+    <head>
+        <title>{{ title }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' href='/css/app3.css' />
+    </head>
+    <body>
+        <header>
+            <img src='img/cube_orig.png' id='origcolor'/>
+            <img src='img/cube_bw.png' id='bwcolor'/>
+            <img src='img/cube_other.png' id='othercolor'/>
+        </header>
+        <footer>
+            <div id='logo'>
+                <img style='height:100px;' src='img/a3.png'/>
+            </div>
+            <div id='back'>
+                <a href='/'><img style='height:100px;' src='img/back1.png'/></a>
+            </div>
+        </footer>
+        <script data-main="js/main3" src="js/lib/require-jquery.js"></script>
+    </body>
 </html>

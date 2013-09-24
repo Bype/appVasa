@@ -25,6 +25,15 @@ body {
     position: absolute;
 }
 
+.sq{
+    outline: solid 1px #111;
+    -webkit-backface-visibility: hidden;
+    z-index:-100;
+}
+
+.front{
+    z-index:100;
+}
 
 .lf {
     background-color: #44e;
@@ -54,7 +63,7 @@ body {
 .tfe {
     -webkit-transform: rotate(45deg) skew(-15deg,-15deg) scale(1.1,1.1);
     border-top: @edgestyle;
-    border-left: @edgestyle;
+    border-left: @edgestyle;  
 }
 .rfe {
     -webkit-transform: skewY(-30deg);

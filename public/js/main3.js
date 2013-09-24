@@ -6,7 +6,7 @@ requirejs.config({
 
 require(["jquery", "jqui"], function($) {
 
-	function buildACube(id, toppos, leftpos) {
+	function buildACube(id, leftpos, toppos) {
 		var $cube = $(document.createElement('div')).attr("id", id);
 
 		var $lfe = $(document.createElement('div')).addClass("sqe lfe");
@@ -46,10 +46,44 @@ require(["jquery", "jqui"], function($) {
 		$('body').append($cube);
 	}
 
-	buildACube("cube1", 300, 300);
-	buildACube("cube2", 300, 428);
-	buildACube("cube3", 300, 556);
-	buildACube("cube3", 200, 492);
+	function changeColor(lfc, tfc, rfc) {
+		$('.lf').animate({
+			"background-color" : lfc,
+		});
+		$('.tf').animate({
+			"background-color" : tfc,
+		});
+		$('.rf').animate({
+			"background-color" : rfc,
+		});
+	}
+
+
+	$('#origcolor').click(function() {
+		changeColor("#44e", "#ee4", "#e44");
+	});
+
+	$('#bwcolor').click(function() {
+		changeColor("#444", "#eee", "#aaa");
+	});
+
+	$('#othercolor').click(function() {
+		changeColor("#ffb000", "#ff00a8", "#00ff9b");
+	});
+
+	var idx = 0;
+	var cols = ($(document).width() / 128) - 3;
+	var rows = ($(document).height() / 100) - 4;
+
+	for (var i = 0; i < cols; i++)
+		for (var j = 0; j < rows; j++) {
+			if (j % 2)
+				buildACube("cube" + idx, 128 + i * 128, 200 + j * 100);
+			else
+				buildACube("cube" + idx, 192 + i * 128, 200 + j * 100);
+
+			idx++;
+		}
 
 	$('.sq').draggable({
 		cursorAt : {
@@ -59,18 +93,43 @@ require(["jquery", "jqui"], function($) {
 		start : function(event, ui) {
 			ui.helper.animate({
 				opacity : 1
-			});
+			},2000);
 		}
 	});
+	$('.sq').click(function() {
+		$(this).toggleClass('front');
+	});
 	setTimeout(function() {
-		$('.sq').each(function(idx, elt) {
-			$(elt).animate({
-				top : (-32 * Math.random()) + 16 + $(document).height() - 100,
-				left : (-32 * Math.random()) + 16 + $(document).width() / 4 + idx * $(document).width() / 24,
-				opacity : .5
-			},2000);
-		})
+		$('.lf').each(function(idx, elt) {
+			setTimeout(function() {
+				$(elt).animate({
+					top : (-32 * Math.random()) + 16 + $(document).height() - 100,
+					left : (-32 * Math.random()) + 16 + $(document).width() / 4,
+					opacity : .2
+				}, 2000);
+			}, 80 * idx);
+		});
+		$('.tf').each(function(idx, elt) {
+			setTimeout(function() {
+				$(elt).animate({
+					top : (-32 * Math.random()) + 16 + $(document).height() - 100,
+					left : (-32 * Math.random()) + 16 + $(document).width() / 2,
+					opacity : .2
+				}, 2000);
+			}, 80 * idx);
+		});
+		$('.rf').each(function(idx, elt) {
+			setTimeout(function() {
+				$(elt).animate({
+					top : (-32 * Math.random()) + 16 + $(document).height() - 100,
+					left : (-32 * Math.random()) + 16 + 3 * $(document).width() / 4,
+					opacity : .2
+				}, 2000);
+			}, 80 * idx);
+		});
+		$('.sqe').animate({
+			opacity : 0
+		}, 30000);
 	}, 1000);
-
 });
 
