@@ -2,22 +2,21 @@ define(['lib/pixastic.custom'], function() {
 	var imageObj = [];
 	var imgLocal = [];
 	var hue = 0;
-	for (var j = 0; j < 5; j++) {
+	for (var j = 0; j < 4; j++) {
 		var lImg = new Image()
 
 		lImg.onload = function() {
 			Pixastic.process(this, "hsl", {
-				hue : -180 + (hue * 60),
 				saturation : 20,
-				lightness :0
+				lightness : 0
 			});
 
 			document.body.appendChild(this);
 			$(this).attr('id', 't' + hue);
 			$(this).addClass('shadowcanvas');
 			hue += 1;
-		}
-		lImg.src = 'img/base3.png';
+		};
+		lImg.src = 'img/vega3gd_' + (j + 1) + '.jpg';
 	}
 	return {
 		debug : function(c, markers) {
@@ -44,8 +43,10 @@ define(['lib/pixastic.custom'], function() {
 			for ( i = 0; i !== markers.length; ++i) {
 				corners = markers[i].corners;
 				var c2 = document.getElementById('t' + i);
-				c.drawImage(c2, corners[0].x, corners[0].y, corners[2].x - corners[0].x, corners[2].y - corners[0].y)
+				c.drawImage(c2, corners[0].x-25 , corners[0].y-25, 100, 100);
+				//c.drawImage(c2, corners[0].x, corners[0].y, corners[2].x - corners[0].x, corners[2].y - corners[0].y)
+
 			}
 		}
-	}
+	};
 });

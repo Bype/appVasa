@@ -63,6 +63,7 @@ require(['jquery', 'underscore', 'bootstrap', 'lib/ga', 'cv', 'aruco'], function
 					imageData = c.getImageData(0, 0, canvas.width, canvas.height);
 					var markers = detector.detect(imageData);
 					drawar.draw(c, markers);
+					//drawar.debug(c, markers);
 					window.requestAnimationFrame(draw);
 				}
 
