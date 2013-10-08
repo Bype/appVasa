@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>View</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel='stylesheet' href='/css/app3.css' />
+		<style>
+			body{
+				background-color: white;
+			}
+		</style>
+	</head>
+	<body>
+		{{#sqs}}
+		<div class="sq {{type}}" style="{{style}}"></div>
+		{{/sqs}}
+	</body>
+</html>

@@ -1,6 +1,6 @@
 requirejs.config({
 	paths : {
-		jqui : "lib/jquery-ui"
+		jqui : "lib/jquery-ui",
 	}
 });
 
@@ -59,6 +59,35 @@ require(["jquery", "jqui"], function($) {
 	}
 
 
+	$('#print').click(function() {
+		var col = new Array();
+		$(".moved").each(function(idx, elt) {
+			var sq = {};
+			var $elt = $(elt);
+			if ($elt.hasClass('lf'))
+				sq.type = 'lf';
+			if ($elt.hasClass('tf'))
+				sq.type = 'tf';
+			if ($elt.hasClass('rf'))
+				sq.type = 'rf';
+			if ($elt.hasClass('front'))
+				sq.type += ' front';
+			sq.style = $elt.attr("style");
+			col.push(sq);
+		});
+		$.post('/composave', {
+			sqs : JSON.stringify(col)
+		}, function(data) {
+			console.log(data);
+			$('#url').html('http://v.hexalab.org/apn/' + data.name);
+			$('#url').fadeIn();
+			setTimeout(function() {
+				$('#url').fadeOut();
+			}, 10000);
+		});
+
+	});
+
 	$('#origcolor').click(function() {
 		changeColor("#44e", "#ee4", "#e44");
 	});
@@ -93,7 +122,8 @@ require(["jquery", "jqui"], function($) {
 		start : function(event, ui) {
 			ui.helper.animate({
 				opacity : 1
-			},2000);
+			}, 2000);
+			ui.helper.addClass("moved");
 		}
 	});
 	$('.sq').click(function() {
