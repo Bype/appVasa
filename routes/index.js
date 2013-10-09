@@ -62,7 +62,7 @@ exports.save = function(req, res) {
 	red.select(3, function(err) {
 		red.incr('apn', function(err,ret) {
 			console.log(ret);
-			req.body.name = ret.toString() + Math.floor(1 + Math.random() * 100);
+			req.body.name = ret.toString() + Math.floor(100 + Math.random() * 899);
 			req.body.sqs = JSON.parse(req.body.sqs);
 			db.compo.save(req.body, function(err1, newset) {
 				newset.success = true;
