@@ -53,15 +53,22 @@ db = mongo.db("mongodb://dbserver/vasa", {
 	safe : false
 });
 
+var red = require("redis").createClient(6379, "dbserver");
+
 db.bind('compo');
 
 exports.save = function(req, res) {
 	var date = new Date();
-	req.body.name = Math.floor(Math.random() * 10) + Math.floor(date.getTime() / 1000).toString().slice(5);
-	req.body.sqs = JSON.parse(req.body.sqs);
-	db.compo.save(req.body, function(err1, newset) {
-		newset.success = true;
-		res.json(newset);
+	red.select(3, function(err) {
+		red.incr('apn', function(err,ret) {
+			console.log(ret);
+			req.body.name = ret.toString() + Math.floor(1 + Math.random() * 100);
+			req.body.sqs = JSON.parse(req.body.sqs);
+			db.compo.save(req.body, function(err1, newset) {
+				newset.success = true;
+				res.json(newset);
+			});
+		});
 	});
 };
 
