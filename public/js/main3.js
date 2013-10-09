@@ -158,7 +158,7 @@ require(["jquery", "jqui"], function($) {
 		});
 		$('.sqe').animate({
 			opacity : 0
-		}, 30000);
+		}, 60000);
 	}, 1000);
 });
 
