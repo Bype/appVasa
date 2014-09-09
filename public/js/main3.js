@@ -78,7 +78,7 @@ require(["jquery", "jqui"], function($) {
 		$.post('/composave', {
 			sqs : JSON.stringify(col)
 		}, function(data) {
-			$('#url').html('http://v.hexalab.org/apn/' + data.name);
+			$('#url').html('http://vasa.bype.org/apn/' + data.name);
 			$('#url').fadeIn();
 			setTimeout(function() {
 				$('#url').fadeOut();
